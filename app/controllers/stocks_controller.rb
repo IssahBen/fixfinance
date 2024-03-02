@@ -1,11 +1,14 @@
 class StocksController < ApplicationController
     def search 
         if params[:stock].present?
-            @stock = Stock.new_lookup(params[:stock])
+            @stock = Stock.new_lookup(params[:stock].upcase)
             if @stock 
                 respond_to do |format|
+                    format.html {redirect_to my_portfolio_path}
                     format.js  { render partial: 'users/result' }
+                    
                 end
+                
                  
             else 
                 respond_to do |format|

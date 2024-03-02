@@ -1,1 +1,10 @@
-document.querySelector('#results').innerHTML = "<%= escape_javascript(render partial:'users/result',formats: :html )%>";
+
+document.querySelector('#results').insertAdjacentHTML( "afterbegin","<%= escape_javascript(render partial:'users/result',formats: :html )%>");
+ search_result = document.querySelector(".display")
+ submit_button = document.querySelector(".submit")
+
+if (search_result){
+    submit_button.addEventListener('click',function(e){
+        search_result.innerHTML =""
+    })
+}

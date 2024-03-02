@@ -7,7 +7,7 @@
                 <%= f.text_field :stock ,placeholder: "Stock ticker symbol",autofocus: true, class: "form-control form-control-lg" %>
             </div>
             <div class = "col-sm-3 no-left-padding" >
-               <%= f.button type: :submit, class: "btn btn-success" do %>
+               <%= f.button type: :submit, class: " submit btn btn-success" do %>
                     <%= fa_icon 'search 2x' %>
                 <% end %>
             <div>
@@ -15,7 +15,15 @@
     <% end %>
 
 </div>
-
-
 <div id = "results">
+
+
 <div>
+<div id  = "table">
+    <% if  !@tracked_stocks.empty?%>
+    <%= render partial: "stocks/list"%>
+    <% end %>
+</div>
+
+
+ 
