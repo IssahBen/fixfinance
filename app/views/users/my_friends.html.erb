@@ -1,10 +1,11 @@
-<h1>My Portfolio</h1>
+<h1>Friends</h1>
+
 <div class = "search-area">
-    <h3>Search Stocks</h3>
-    <%= form_with  url: search_stock_path,method: :get,local: false do |f| %>
+    <h3>Search Friends</h3>
+    <%= form_with  url: search_friend_path,method: :get,local: false do |f| %>
         <div class = 'form-group row'>
             <div class = "col-sm-9 no-right-padding">
-                <%= f.text_field :stock ,placeholder: "Stock ticker symbol",autofocus: true, class: "form-control form-control-lg" %>
+                <%= f.text_field :friend ,placeholder: "Name or Email",autofocus: true, class: "form-control form-control-lg" %>
             </div>
             <div class = "col-sm-3 no-left-padding" >
                <%= f.button type: :submit, class: " submit btn btn-success" do %>
@@ -15,11 +16,11 @@
     <% end %>
 
 </div>
-<div id = "results">
 
-<div>
-<div id  = "table">
-    <% if  !@tracked_stocks.empty? %>
-    <%= render partial: "stocks/list" %>
-    <% end %>
+<div id = "friend_result">
 </div>
+
+<% if !@friends.empty? %>
+    <%= render 'friends/list' %>
+
+<% end %>

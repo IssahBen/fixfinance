@@ -45,6 +45,8 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem "erb_lint", require: false
+  gem 'rubocop', '~> 1.60', require: false
    gem "font-awesome-rails"
   gem 'iex-ruby-client'
   gem "devise-i18n"
